@@ -1,4 +1,3 @@
-from keyboardlayout.key import Key
 
 VIRTUAL_KEY_MAP = {
     49: 49,

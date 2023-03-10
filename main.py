@@ -1,15 +1,12 @@
 import argparse
 import threading
-import time
 import tkinter as tk
 import tkinter.font as tkf
 from pynput.keyboard import Key, Listener
-from random import randint
 import keyboardlayout as kl
 import keyboardlayout.tkinter as klt
 from keymap import VIRTUAL_KEY_MAP
 from keyboardlayout.tkinter.key import KEY_MAP
-
 
 grey = '#bebebe'
 dark_grey = '#414141'
@@ -56,11 +53,6 @@ def _check_esc_pressed(keyboard_layout):
     with Listener(on_press=lambda event: on_press(event, keyboard_layout),
                   on_release=lambda event: on_release(event, keyboard_layout)) as listener:
         listener.join()
-
-
-def Lap(my_label):
-    text = str(randint(0, 1000000))
-    my_label.configure(text=text)
 
 
 def get_keyboard(
@@ -117,17 +109,3 @@ if __name__ == "__main__":
     main_loop_thread.daemon = True
     main_loop_thread.start()
     window.mainloop()
-
-    # Create the ui
-    # root = tk.Tk()
-    # root.attributes("-fullscreen", True)
-    # my_label = tk.Label(root, text="Hello World!")
-    # my_label.pack()
-    #
-    # # Run the app's main logic loop in a different thread
-    # main_loop_thread = threading.Thread(target=app_main_loop, args=(1,))
-    # main_loop_thread.daemon = True
-    # main_loop_thread.start()
-    #
-    # # Run the UI's main loop
-    # root.mainloop()
