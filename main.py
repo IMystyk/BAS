@@ -10,7 +10,7 @@ from keyboardlayout.tkinter.key import KEY_MAP
 
 grey = '#bebebe'
 dark_grey = '#414141'
-key_size = 60
+key_size = 100
 
 
 def on_press(key, keyboard_layout):
@@ -82,7 +82,7 @@ def main_loop_tmp(keyboard_layout):
     kb_input_thread.start()
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument(
         'layout_name',
